@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.AmiiboDetailsFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.amiiboverse.model.AmiiboViewModel" />
+    </data>
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/amiibo_image"
+            imageUrl="@{viewModel.amiibo.image}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_100tb"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/amiibo_character"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_elements"
+            android:text="@{viewModel.amiibo.character}"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amiibo_image" />
+
+        <TextView
+            android:id="@+id/amiibo_serie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_elements"
+            android:text="@string/amiibo_serie"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amiibo_character" />
+
+        <TextView
+            android:id="@+id/amiibo_serie_response"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="@dimen/margin_between_elements"
+            android:text="@{viewModel.amiibo.amiiboSeries}"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintTop_toTopOf="@id/amiibo_serie"
+            app:layout_constraintBottom_toBottomOf="@id/amiibo_serie"
+            app:layout_constraintStart_toEndOf="@id/amiibo_serie"/>
+
+        <TextView
+            android:id="@+id/amiibo_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_between_elements"
+            android:text="@string/amiibo_name"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amiibo_serie_response" />
+
+        <TextView
+            android:id="@+id/amiibo_name_response"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="@dimen/margin_between_elements"
+            android:text="@{ viewModel.amiibo.name}"
+            android:textAllCaps="true"
+            android:textAppearance="?attr/textAppearanceSubtitle1"
+            app:layout_constraintTop_toTopOf="@id/amiibo_name"
+            app:layout_constraintStart_toEndOf="@id/amiibo_name"
+            app:layout_constraintBottom_toBottomOf="@id/amiibo_name" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
